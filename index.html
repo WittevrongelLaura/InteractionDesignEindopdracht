@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>MovieInfo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#cce7ff">
+        <meta name="theme-color" content="#cce7ff">
+
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+        <link rel="manifest" href="site.webmanifest">
+        <!-- <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f3557"> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <script src="./script/app.js"></script>
+    </head>
+    <body>
+        <div class="o-row">
+            <header class="c-header">
+                <label>Welcome to the Movies & Series Database!</label>
+            </header>
+        </div>
+        <section class="o-row">
+            <div class="o-container">
+                <div class="o-section">
+                    <div class="o-layout c-button">
+                        <input class="c-button__toggle c-btn__toggle--activated" type="button" name="moviebtn" value="Movie">
+                        <input class="c-button__toggle" type="button" name="seriebtn" value="Serie">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="o-row">
+            <div class="o-container">
+                <div class="o-section">
+                    <div class="o-layout">
+                        <label for="search">Search for any movie.</label>
+                        <input class="js-searchinput" type="text" name="searchinput" id="searchinput" placeholder="Type any movie..."/>
+                        <!-- <button class="js-btnsearch" type="submit">Search</button> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="o-row">
+            <div class="o-container">
+                <div class="o-section">
+                    <div class="o-layout">
+                        <div class="c-card js-card">
+                            <div class="c-poster"><img class="c-poster__image js-poster" src="" alt="Movie/Serie poster"></div>
+                            <label for="title" name="title" class="c-card__title js-title"></label>
+                            <label for="year" name="year" class="c-card__year js-year"></label>
+                            <label for="rating" name="rating" class="c-card__rating js-rating"></label>
+                            <label for="plot" name="plot" class="c-card__plot js-plot"></label>
+                            <label for="runtime" name="runtime" class="c-card__runtime js-runtime"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	</body>
+</html>
