@@ -1,10 +1,26 @@
 const APIKEY = "db006036";
+const ENDPOINT = `http://www.omdbapi.com/?apikey=${APIKEY}&`;
 let searchinput = "", poster = "", title = "", year = "", plot = "", rating = "", card="", id="", links = "", resultNumber = "";
+
+const ShowLatestMovies = async function(){
+	let year = new Date().getFullYear();
+	console.log(year);
+
+	const jsonResultsLatest = `${ENDPOINT}s=did&y=${year}`;
+	const request = await fetch(`${jsonResultsLatest}`);
+	const data = await request.json();
+	
+	if (data.Search != null){
+		console.log(data.Search);
+	}else{
+		console.log("There are no movies from this year")
+	}
+}
 
 const SearchForMovie = async function(searchText) {
 
 	//Search for movie
-	const jsonResultsSearch = `http://www.omdbapi.com/?apikey=${APIKEY}&s=${searchText}&type=movie`;
+	const jsonResultsSearch = `${ENDPOINT}s=${searchText}&type=movie`;
 	
 	const request = await fetch(`${jsonResultsSearch}`);
 	const data = await request.json();
@@ -20,7 +36,7 @@ const SearchForMovie = async function(searchText) {
 	
 
 	let htmlString = "";
-	let number = 1;
+	
 	for(const item of results){
 		// console.log(item);
 		// console.log(item.Title);
@@ -28,7 +44,7 @@ const SearchForMovie = async function(searchText) {
 		<div class="c-poster"><img class="c-poster__image js-poster" src="${item.Poster}" alt="Movie/Serie poster"></div>
 		<label for="title" name="title" class="c-card__title js-title"><a class="c-card__link js-card-link">${item.Title}</a></label>
 		<label for="year" name="year" class="c-card__year js-year">${item.Year}</label>`;
-		number += 1;
+		
 	}
 
 	card.innerHTML = htmlString;
@@ -47,10 +63,6 @@ const SearchForMovie = async function(searchText) {
 			console.log(GetMovieByTitle(link.innerText));
 		});
 	}
-	
-
-
-
 
 	// <label for="rating" name="rating" class="c-card__rating js-rating">${results.Rating}</label>
 	// <label for="plot" name="plot" class="c-card__plot js-plot"></label>
@@ -68,6 +80,10 @@ const GetMovieByImdbID = function(id){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+	btnMovies = document.querySelector(".js-btntogglemovies");
+	btnSeries = document.querySelector(".js-btntoggleseries");
+	Page = document.querySelector(".js-page");
+
 	searchinput = document.querySelector(".js-searchinput");
 	// btnsearch = document.querySelector(".js-btnsearch");
 	poster = document.querySelector(".js-poster");
@@ -77,7 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	plot = document.querySelector(".js-plot");
 	card = document.querySelector(".js-card");
 
-	
+	btnMovies.addEventListener("click", function(){
+		console.log("button movies clicked");
+		ShowLatestMovies();
+	})
+
+	btnSeries.addEventListener("click", function(){
+		console.log("button series clicked");
+	})
 
 	searchinput.addEventListener("keyup", function(e){
 		if (e.key=='Enter'){
