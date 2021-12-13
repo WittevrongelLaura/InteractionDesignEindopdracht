@@ -44,21 +44,29 @@
                 </div>
               </div>
               <div class="o-section">
-                <div class="o-layout">
-                  <div class="c-card js-card">
+                <div class="c-cards js-cards">
+                  <div class="c-card">
                     <div class="c-card__content js-cardcontent">
-                      <div class="c-card__header">
-                        <div class="c-card__title">
-                          <label for="title" name="title" class="c-card__title js-title"><a class="c-card__link js-card-link">Title</a></label>
+                      <div class="c-card__poster"><img class="c-card__poster--image js-poster" src="https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg" alt="Movie/Serie poster" /></div>
+                      <div class="c-card__info">
+                        <label class="c-card__title js-title"><a class="c-card__link js-card-link" for="title" name="title">VoorbeeldTitle</a></label>
+                        <label class="c-card__year js-year" for="year" name="year">1989</label>
+                        <div class="c-card__detailbtn">
+                          <button class="c-card__detailbtn--btn" value="details">Details</button>
+                          <svg class="c-card__detailbtn--icon" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                          </svg>
                         </div>
                       </div>
-                      <div class="c-card__body">
-                        <div class="c-poster"><img class="c-poster__image js-poster" src="" alt="Movie/Serie poster" /></div>
-                        <label for="year" name="year" class="c-card__year js-year"></label>
-                        <label for="rating" name="rating" class="c-card__rating js-rating"></label>
-                        <label for="plot" name="plot" class="c-card__plot js-plot"></label>
-                        <label for="runtime" name="runtime" class="c-card__runtime js-runtime"></label>
+
+                      <div class="c-card__details">
+                        <label for="rating" name="rating" class="c-card__rating js-rating">5 star</label>
+                        <label for="plot" name="plot" class="c-card__plot js-plot">This is a story.</label>
+                        <label for="runtime" name="runtime" class="c-card__runtime js-runtime">5 hours</label>
                       </div>
+
+                      <div class="c-card__timeline">TIMELINE</div>
                     </div>
                   </div>
                 </div>

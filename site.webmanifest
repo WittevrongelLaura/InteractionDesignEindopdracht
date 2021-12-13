@@ -1,6 +1,6 @@
 {
-    "name": "Daylight",
-    "short_name": "Daylight",
+    "name": "Eindopdracht OMDB",
+    "short_name": "OMDB",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,6 +14,6 @@
         }
     ],
     "theme_color": "#cce7ff",
-    "background_color": "#cce7ff",
+    "background_color": "#2b9be0",
     "display": "standalone"
 }

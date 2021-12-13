@@ -13,6 +13,9 @@
   --global-color-font: Black;
   --global-color-font-button: white;
   --global-color-background: #2b9be0; /*#1882c4*/
+
+  --global-color-alpha: var(--global-color-background);
+  --global-color-alpha-x: #066baa;
   
 
   /* opacity */
@@ -75,7 +78,7 @@ body {
 
 ::selection {
   --color-backselect: var(--global-color-background);
-  background: var(--global-color-backselect);
+  background: var(--global-color-background);
   color: var(--global-color-font);
   text-shadow: none;
 }
@@ -507,8 +510,8 @@ input::placeholder {
   
 }
 
-.c-button__toggle:focus {
-
+.c-button__toggle:hover {
+  cursor: pointer;
 }
 
 
@@ -544,6 +547,89 @@ input::placeholder {
     ---
     Card with data
 */
+.c-card {
+  display: flex;
+  border: var(--global-color-background) solid 1px;
+  border-radius: 3rem;
+  padding: 3rem;
+  margin: 1rem 0 1rem 0;
+}
+.c-card__content {
+  display: grid;
+  grid-template-columns: 1fr 38rem;
+  grid-template-rows: 8rem 10rem 40px;
+}
+
+.c-card__body {
+  
+}
+
+.c-card__poster {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: red;
+}
+
+.c-card__poster--image {
+  
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.c-card__info {
+  background-color: green;
+  padding: 1rem;
+  /* grid-column: 1/2; */
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.c-card__details {
+  background-color: blue;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  padding: 1rem;
+}
+
+.c-card__timeline {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 3;
+  background-color: orange;
+}
+
+.c-card__detailbtn {
+  height: 1rem;
+  display: flex;
+}
+
+.c-card__detailbtn--btn {
+  all: unset;
+  color: var(--global-color-alpha);
+  text-decoration: underline;
+}
+
+.c-card__detailbtn--icon {
+  fill: var(--global-color-alpha); 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.c-card__detailbtn:hover {
+  color: var(--global-color-alpha-x);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c-card__detailbtn--icon:hover {
+  fill: var(--global-color-alpha-x);
+  cursor: pointer;
+}
+
+
 
 
 /*

@@ -1,19 +1,20 @@
 const APIKEY = "db006036";
 const ENDPOINT = `http://www.omdbapi.com/?apikey=${APIKEY}&`;
 let searchinput = "", poster = "", title = "", year = "", plot = "", rating = "", card="", id="", links = "", resultNumber = "";
+let selectedId;
 
 const ShowLatestMovies = async function(){
 	let year = new Date().getFullYear();
 	console.log(year);
 
-	const jsonResultsLatest = `${ENDPOINT}s=did&y=${year}`;
+	const jsonResultsLatest = `${ENDPOINT}s=iui&y=${year}`;
 	const request = await fetch(`${jsonResultsLatest}`);
 	const data = await request.json();
 	
 	if (data.Search != null){
 		console.log(data.Search);
 	}else{
-		console.log("There are no movies from this year")
+		console.log("There are no movies from this year");
 	}
 }
 
@@ -40,14 +41,18 @@ const SearchForMovie = async function(searchText) {
 	for(const item of results){
 		// console.log(item);
 		// console.log(item.Title);
-		htmlString += `<div class="js-imdbid">"${item.imdbID}"</div>
-		<div class="c-poster"><img class="c-poster__image js-poster" src="${item.Poster}" alt="Movie/Serie poster"></div>
-		<label for="title" name="title" class="c-card__title js-title"><a class="c-card__link js-card-link">${item.Title}</a></label>
-		<label for="year" name="year" class="c-card__year js-year">${item.Year}</label>`;
 		
+		htmlString += 
+			`<div class="c-card ">
+			 <div class="c-card__content js-cardcontent">
+			   <div class="c-card__body">
+				 <div class="c-poster"><img class="c-poster__image js-poster" src="${item.Poster}" alt="Movie/Serie poster" /></div>
+				 <label for="title" name="title" class="c-card__title js-title"><a class="c-card__link js-card-link">${item.Title}</a></label>
+				 <label for="year" name="year" class="c-card__year js-year">${item.Year}</label>
+			   </div></div></div>`;	   
 	}
 
-	card.innerHTML = htmlString;
+	cards.innerHTML = htmlString;
 	
 
 	//link klikken -> film/serie detail geven
@@ -91,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	year = document.querySelector(".js-year");
 	rating = document.querySelector(".js-rating");
 	plot = document.querySelector(".js-plot");
-	card = document.querySelector(".js-card");
+	cards = document.querySelector(".js-cards");
 
 	btnMovies.addEventListener("click", function(){
 		console.log("button movies clicked");
