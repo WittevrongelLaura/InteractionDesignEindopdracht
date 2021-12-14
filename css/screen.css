@@ -17,6 +17,17 @@
   --global-color-alpha: var(--global-color-background);
   --global-color-alpha-x: #066baa;
   
+  --global-color-neutral-xxxx-light: #F5F6FA;
+  --global-color-neutral-xxx-light: #E2E3E7;
+  --global-color-neutral-xx-light: #caccd4;
+  --global-color-neutral-x-light: #b5b6c0;
+  --global-color-neutral-light: #a0a1ad;
+  --global-color-neutral: #8b8c9a;
+  --global-color-neutral-dark: #757787;
+  --global-color-neutral-x-dark: #606274;
+  --global-color-neutral-xx-dark: #4b4c60;
+  --global-color-neutral-xxx-dark: #35374d;
+  --global-color-neutral-xxxx-dark: #20223a;
 
   /* opacity */
   --muted-opacity: 0.6;
@@ -589,15 +600,25 @@ input::placeholder {
   grid-column-start: 2;
   grid-row-start: 2;
   padding: 1rem;
-  display: none;/*block*/
+  display: block;/*block*/
 }
+
+
+.c-card__details--star {
+  fill: var(--global-color-alpha);
+  
+}
+
+.c-card__details--nostar {
+  fill: var(--global-color-neutral-dark);
+  
+}
+
 
 .c-card__timeline {
   grid-column-start: 1;
   grid-column-end: span 2;
-  grid-row-start: 3;
-  
-  
+  grid-row-start: 3;  
 }
 
 .c-card__timelinelabels {
@@ -620,7 +641,7 @@ input::placeholder {
 .c-card__timeline--line{
   height: 20px;  /* Can be anything */
   position: relative;
-  background: #555;
+  background: var(--global-color-neutral-xx-dark);
   border-radius: 1rem;
   padding: .3rem;
 }
@@ -723,8 +744,6 @@ input::placeholder {
   fill: var(--global-color-alpha-x);
   cursor: pointer;
 }
-
-
 
 
 /*
