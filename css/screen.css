@@ -554,6 +554,7 @@ input::placeholder {
   padding: 3rem;
   margin: 1rem 0 1rem 0;
 }
+
 .c-card__content {
   display: grid;
   grid-template-columns: 1fr 38rem;
@@ -567,20 +568,17 @@ input::placeholder {
 .c-card__poster {
   grid-column-start: 1;
   grid-row-start: 1;
-  grid-row-end: 3;
-  background-color: red;
+  grid-row-end: 3; 
 }
 
 .c-card__poster--image {
-  
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  padding: 2px;
 }
 
 .c-card__info {
-  background-color: green;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   /* grid-column: 1/2; */
   grid-column-start: 2;
@@ -588,22 +586,119 @@ input::placeholder {
 }
 
 .c-card__details {
-  background-color: blue;
   grid-column-start: 2;
   grid-row-start: 2;
   padding: 1rem;
+  display: none;/*block*/
 }
 
 .c-card__timeline {
   grid-column-start: 1;
   grid-column-end: span 2;
   grid-row-start: 3;
-  background-color: orange;
+  
+  
 }
+
+.c-card__timelinelabels {
+  margin-top: 1rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding-left: .1rem;
+  padding-right: .1rem;
+}
+
+/* .c-card__timeline--line {
+  border: var(--global-color-alpha) solid 1px;
+  border-radius: 3rem;
+  
+  display: flex;
+  /* justify-content: space-around; */
+/*} */
+
+.c-card__timeline--line{
+  height: 20px;  /* Can be anything */
+  position: relative;
+  background: #555;
+  border-radius: 1rem;
+  padding: .3rem;
+}
+
+.c-card__timeline--line > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: var(--global-color-alpha);
+}
+
+.c-card__timelinespan {
+  width: 25%;
+}
+
+/* .c-card__timeline--line1 {
+  background-color: red;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin: 0;
+}
+
+.c-card__timeline--line2 {
+  background-color: blue;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin: 0;
+}
+
+.c-card__timeline--line3 {
+  background-color: green;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+}
+
+.c-card__timeline--line4 {
+  background-color: orange;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+}
+
+.c-card__timeline--line5 {
+  background-color: purple;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+}
+
+.c-card__timeline--line6 {
+  background-color: rosybrown;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+}
+
+.c-card__timeline--line7 {
+  background-color: aquamarine;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+}
+
+.c-card__timeline--line8 {
+  background-color: darkslateblue;
+  padding-left: 2.8rem;
+  padding-right: 2.9rem;
+  margin: 0;
+} */
 
 .c-card__detailbtn {
   height: 1rem;
   display: flex;
+  padding-top: 2rem;
 }
 
 .c-card__detailbtn--btn {
