@@ -550,7 +550,7 @@ input::placeholder {
 }
 
 .c-input__search {
-
+  font-family: inherit;
 }
 
 /*
@@ -569,7 +569,7 @@ input::placeholder {
 .c-card__content {
   display: grid;
   grid-template-columns: 1fr 38rem;
-  grid-template-rows: 8rem 10rem 40px;
+  grid-template-rows: 8rem 10rem 1fr 40px;
 }
 
 .c-card__body {
@@ -590,7 +590,7 @@ input::placeholder {
 .c-card__info {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding-left: 1rem;
   /* grid-column: 1/2; */
   grid-column-start: 2;
   grid-row-start: 1;
@@ -599,7 +599,8 @@ input::placeholder {
 .c-card__details {
   grid-column-start: 2;
   grid-row-start: 2;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
   display: block;/*block*/
 }
 
@@ -614,11 +615,19 @@ input::placeholder {
   
 }
 
-
+.c-card__moredetails {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding-top: 1rem;
+}
+.c-card__plot {
+  padding-top: 2rem;
+}
 .c-card__timeline {
   grid-column-start: 1;
   grid-column-end: span 2;
-  grid-row-start: 3;  
+  grid-row-start: 4;  
 }
 
 .c-card__timelinelabels {
@@ -716,34 +725,71 @@ input::placeholder {
   margin: 0;
 } */
 
-.c-card__detailbtn {
+.c-card__detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 1.75rem;
+  cursor: pointer;
+}
+
+.c-card__detail--link {
+  all: unset;
   height: 1rem;
   display: flex;
-  padding-top: 2rem;
-}
-
-.c-card__detailbtn--btn {
-  all: unset;
+  padding-top: 1rem;
+  
+  /* position: absolute; */
   color: var(--global-color-alpha);
   text-decoration: underline;
+  width: 3.4rem;/*55px / 16 = 3.4*/
+  height: 1.25rem;
 }
+/*
+.c-card__detailbtn--btn {
+  all: unset;
+  position: absolute;
+  color: var(--global-color-alpha);
+  text-decoration: underline;
+  width: 3.4rem;/*55px / 16 = 3.4*//*
+  height: 1.25rem;
+}*/
 
-.c-card__detailbtn--icon {
+.c-toggle-arrow__icon {
   fill: var(--global-color-alpha); 
   width: 1.5rem;
   height: 1.5rem;
+  padding-top: 1.25rem;
+  display: block;
 }
 
+.c-toggle-arrow__label {
+  display: flex;
+  align-items: center;
+  height: 1.50rem;
+}
+
+/*
 .c-card__detailbtn:hover {
   color: var(--global-color-alpha-x);
   text-decoration: underline;
   cursor: pointer;
+} */ 
+
+.c-toggle-arrow {
+  display: block;
 }
 
-.c-card__detailbtn--icon:hover {
+
+
+.c-toggle__checkbox:checked + .c-toggle-arrow__label .c-toggle-arrow__icon{
+  fill: red;
+}
+
+/* .c-card__detailbtn--icon:hover {
   fill: var(--global-color-alpha-x);
   cursor: pointer;
-}
+} */
 
 
 /*
@@ -861,6 +907,10 @@ input::placeholder {
     ---
     Utility classes to put specific colors onto elements
 */
+
+.u-hide {
+  display: none;
+}
 
 .u-color-neutral-light {
   color: lightGray;
