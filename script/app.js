@@ -5,6 +5,7 @@ let selectedId, detailsbtn;
 let details, moredetails, timeline;
 let carddetailbtn;
 let imdbStar1, imdbStar2, imdbStar3, imdbStar4, imdbStar5;
+let mystars;
 
 const ShowLatestMovies = async function(){
 	let year = new Date().getFullYear();
@@ -122,41 +123,41 @@ const GetDetails = async function (id){
 		  
 		  <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
 		  <div class="c-card__myrating">
-		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar1" />
-		  <label class="c-label c-card__detailslabel" for="mystar1">
-			<svg class="c-card__details--icon c-card__details--nostar js-mystar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar1" />
+		  <label class="c-label c-card__detailslabel " for="mystar1">
+			<svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			  <path d="M0 0h24v24H0z" fill="none" />
 			  <path d="M0 0h24v24H0z" fill="none" />
 			  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 			</svg>
 		  </label>
-		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar2" />
-		  <label class="c-label c-card__detailslabel" for="mystar2">
-		  <svg class="c-card__details--icon c-card__details--nostar js-mystar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar2" />
+		  <label class="c-label c-card__detailslabel " for="mystar2">
+		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		<input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar3" />
-		  <label class="c-label c-card__detailslabel" for="mystar3">
-		  <svg class="c-card__details--icon c-card__details--nostar js-mystar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		<input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar3" />
+		  <label class="c-label c-card__detailslabel " for="mystar3">
+		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar4" />
-		  <label class="c-label c-card__detailslabel" for="mystar4">
-		  <svg class="c-card__details--icon c-card__details--nostar js-mystar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar4" />
+		  <label class="c-label c-card__detailslabel " for="mystar4">
+		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar5" />
-		  <label class="c-label c-card__detailslabel" for="mystar5">
-		  <svg class="c-card__details--icon c-card__details--nostar js-mystar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar5" />
+		  <label class="c-label c-card__detailslabel " for="mystar5">
+		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -293,5 +294,105 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 	})
 
+	mystars = document.querySelectorAll('.js-mystar');
+	const mystar1 = document.querySelector('.js-mystar1');
+	const mystar2 = document.querySelector('.js-mystar2');
+	const mystar3 = document.querySelector('.js-mystar3');
+	const mystar4 = document.querySelector('.js-mystar4');
+	const mystar5 = document.querySelector('.js-mystar5');
+
+	const resetAll = function(star){
+		if (star == 1){
+			mystar2.classList.remove('c-card__details--star');
+			mystar2.classList.add('c-card__details--nostar');
+			mystar3.classList.remove('c-card__details--star');
+			mystar3.classList.add('c-card__details--nostar');
+			mystar4.classList.remove('c-card__details--star');
+			mystar4.classList.add('c-card__details--nostar');
+			mystar5.classList.remove('c-card__details--star');
+			mystar5.classList.add('c-card__details--nostar');
+		}
+		if(star == 2){
+			mystar3.classList.remove('c-card__details--star');
+			mystar3.classList.add('c-card__details--nostar');
+			mystar4.classList.remove('c-card__details--star');
+			mystar4.classList.add('c-card__details--nostar');
+			mystar5.classList.remove('c-card__details--star');
+			mystar5.classList.add('c-card__details--nostar');
+		}
+		if(star == 3){
+			mystar4.classList.remove('c-card__details--star');
+			mystar4.classList.add('c-card__details--nostar');
+			mystar5.classList.remove('c-card__details--star');
+			mystar5.classList.add('c-card__details--nostar');
+		}
+		if(star == 4){
+			mystar5.classList.remove('c-card__details--star');
+			mystar5.classList.add('c-card__details--nostar');
+		}
+		// if(star == 5){
+		// 	mystar3.classList.remove('c-card__details--star');
+		// 	mystar3.classList.add('c-card__details--nostar');
+		// 	mystar4.classList.remove('c-card__details--star');
+		// 	mystar4.classList.add('c-card__details--nostar');
+		// 	mystar5.classList.remove('c-card__details--star');
+		// 	mystar5.classList.add('c-card__details--nostar');
+		// }
+	}
+
+	for (const star of mystars){
+		
+		star.addEventListener("click", function(){
+			console.log('clicked mystar');
+			let nrstar = this.getAttribute('id');
+			// let nr = nrstar.substring(nrstar.length-1, nrstar.length)
+			console.log(nrstar);
+
+			if (nrstar == 1) {
+				resetAll(nrstar);
+				mystar1.classList.add('c-card__details--star');
+				
+			}
+			
+			if (nrstar == 2) {
+				resetAll(nrstar);
+				mystar1.classList.remove('c-card__details--nostar');
+				mystar1.classList.add('c-card__details--star');
+				mystar2.classList.add('c-card__details--star');
+			}
+			if (nrstar == 3) {
+				resetAll(nrstar);
+				mystar3.classList.add('c-card__details--star');
+				mystar1.classList.remove('c-card__details--nostar');
+				mystar1.classList.add('c-card__details--star');
+				mystar2.classList.remove('c-card__details--nostar');
+				mystar2.classList.add('c-card__details--star');
+			}
+			if (nrstar == 4) {
+				resetAll(nrstar);
+				mystar1.classList.remove('c-card__details--nostar');
+				mystar1.classList.add('c-card__details--star');
+				mystar2.classList.remove('c-card__details--nostar');
+				mystar2.classList.add('c-card__details--star');
+				mystar3.classList.remove('c-card__details--nostar');
+				mystar3.classList.add('c-card__details--star');
+				mystar4.classList.add('c-card__details--star');
+			}
+			if (nrstar == 5) {
+				mystar1.classList.remove('c-card__details--nostar');
+				mystar1.classList.add('c-card__details--star');
+				mystar2.classList.remove('c-card__details--nostar');
+				mystar2.classList.add('c-card__details--star');
+				mystar3.classList.remove('c-card__details--nostar');
+				mystar3.classList.add('c-card__details--star');
+				mystar4.classList.remove('c-card__details--nostar');
+				mystar4.classList.add('c-card__details--star');
+				mystar5.classList.remove('c-card__details--nostar');
+				mystar5.classList.add('c-card__details--star');
+			}
+		})
+	}
+
+	
 	
 });
