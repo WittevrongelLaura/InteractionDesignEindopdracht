@@ -22,7 +22,7 @@ const ShowLatestMovies = async function(){
 }
 
 const SearchForMovie = async function(searchText) {
-
+	cards.innerHTML = ``;
 	//Search for movie
 	const jsonResultsSearch = `${ENDPOINT}s=${searchText}&type=movie`;
 	
@@ -122,8 +122,9 @@ const GetDetails = async function (id){
 
 	const movieResults = [];
 	
-
-	let htmlString = `<div class="c-card">
+	let htmlString = ``;
+	
+	htmlString = `<div class="c-card">
 	<div class="c-card__content js-cardcontent">
 	  <div class="c-card__poster"><img class="c-card__poster--image js-poster" src="${data2.Poster}" alt="Movie/Serie poster" /></div>
 	  <div class="c-card__info">
@@ -204,7 +205,7 @@ const GetDetails = async function (id){
 		  </svg>
 		</div>
 
-		 <label for="runtime" name="runtime" class="c-card__runtime js-runtime">runtime: ${data2.Runtime}</label>
+		 <label for="runtime" name="runtime" class="c-card__runtime js-runtime">Runtime: ${data2.Runtime}</label>
 	  </div>
 
 	  <div class="c-card__moredetails  js-moredetails">
@@ -229,7 +230,7 @@ const GetDetails = async function (id){
 	</div>
   </div>`;
 
-  cards.innerHTML = htmlString;
+  cards.innerHTML += htmlString;
 
 }
 
