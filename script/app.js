@@ -4,6 +4,7 @@ let searchinput = "", poster = "", title = "", year = "", plot = "", rating = ""
 let selectedId, detailsbtn;
 let details, moredetails, timeline;
 let carddetailbtn;
+let imdbStar1, imdbStar2, imdbStar3, imdbStar4, imdbStar5;
 
 const ShowLatestMovies = async function(){
 	let year = new Date().getFullYear();
@@ -56,23 +57,26 @@ const GetDetails = async function (id){
 
 	//idbmstarrating
 	console.log(data2.imdbRating);
-	console.log(Math.round(data2.imdbRating));
+	let rating = Math.round(data2.imdbRating /2)
+	console.log(rating);
+	// console.log(imdbStar1)
+	// console.log(imdbStar5)
 	
 
 	//runtimebar
-	console.log(data2.Runtime);
+	// console.log(data2.Runtime);
 	let space = data2.Runtime.search(" ");
 	let runtime = data2.Runtime.substring(0, space);
-	console.log(runtime);
+	// console.log(runtime);
 
 	let hours = runtime / 60;
-	console.log(hours);
-	console.log(hours.toFixed(2));
+	// console.log(hours);
+	// console.log(hours.toFixed(2));
 	let percentage = 100 / 4 * hours.toFixed(2);
 	if (percentage > 100){
 		percentage = 100;
 	}
-	console.log(percentage)
+	// console.log(percentage)
 
 	//4h = 100%
 	//2.3h = 100/4*2.3
@@ -87,6 +91,7 @@ const GetDetails = async function (id){
 		<label class="c-card__year" for="year" name="year">Year: ${data2.Year}</label>
 		<div class="c-card__details c-card__details--imdbrating">
 		  <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
+		  
 		  <svg class="c-card__details--nostar js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
@@ -114,33 +119,51 @@ const GetDetails = async function (id){
 		  </svg>
 		</div>
 		<div class="c-card__details--myrating">
+		  
 		  <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
-		  <svg class="c-card__details--nostar js-mystar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <div class="c-card__myrating">
+		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar1" />
+		  <label class="c-label c-card__detailslabel" for="mystar1">
+			<svg class="c-card__details--icon c-card__details--nostar js-mystar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+			  <path d="M0 0h24v24H0z" fill="none" />
+			  <path d="M0 0h24v24H0z" fill="none" />
+			  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+			</svg>
+		  </label>
+		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar2" />
+		  <label class="c-label c-card__detailslabel" for="mystar2">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
-		  <svg class="c-card__details--nostar js-mystar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		</label>
+		<input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar3" />
+		  <label class="c-label c-card__detailslabel" for="mystar3">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
-		  <svg class="c-card__details--nostar js-mystar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		</label>
+		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar4" />
+		  <label class="c-label c-card__detailslabel" for="mystar4">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
-		  <svg class="c-card__details--nostar js-mystar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		</label>
+		  <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar5" />
+		  <label class="c-label c-card__detailslabel" for="mystar5">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
-		  <svg class="c-card__details--nostar js-mystar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-			<path d="M0 0h24v24H0z" fill="none" />
-			<path d="M0 0h24v24H0z" fill="none" />
-			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-		  </svg>
+		</label>
 		</div>
+	  </div>
 
 		 <label for="runtime" name="runtime" class="c-card__runtime">Runtime: ${data2.Runtime}</label>
 	  </div>
@@ -167,8 +190,59 @@ const GetDetails = async function (id){
 	</div>
   </div>`;
 
-  cards.innerHTML += htmlString;
+  	cards.innerHTML += htmlString;
 
+	console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
+	console.log(imdbStar1);
+	console.log(imdbStar2);
+	console.log(imdbStar3);
+	console.log(imdbStar4);
+	console.log(imdbStar5);
+	console.log(rating);
+
+  	if (rating == 1){
+	imdbStar1.classList.remove('c-card__details--nostar');
+	imdbStar1.classList.add('c-card__details--star');
+	} else if (rating == 2) {
+		imdbStar1.classList.remove('c-card__details--nostar');
+		imdbStar1.classList.add('c-card__details--star');
+		imdbStar2.classList.remove('c-card__details--nostar');
+		imdbStar2.classList.add('c-card__details--star');
+	} else if (rating == 3) {
+		imdbStar1.classList.remove('c-card__details--nostar');
+		imdbStar1.classList.add('c-card__details--star');
+		imdbStar2.classList.remove('c-card__details--nostar');
+		imdbStar2.classList.add('c-card__details--star');
+		imdbStar3.classList.remove('c-card__details--nostar');
+		imdbStar3.classList.add('c-card__details--star');
+	} else if (rating == 4) {
+		imdbStar1.classList.remove('c-card__details--nostar');
+		imdbStar1.classList.add('c-card__details--star');
+		imdbStar2.classList.remove('c-card__details--nostar');
+		imdbStar2.classList.add('c-card__details--star');
+		imdbStar3.classList.remove('c-card__details--nostar');
+		imdbStar3.classList.add('c-card__details--star');
+		imdbStar4.classList.remove('c-card__details--nostar');
+		imdbStar4.classList.add('c-card__details--star');
+	} else if (rating == 5) {
+		imdbStar1.classList.remove('c-card__details--nostar');
+		imdbStar1.classList.add('c-card__details--star');
+		imdbStar2.classList.remove('c-card__details--nostar');
+		imdbStar2.classList.add('c-card__details--star');
+		imdbStar3.classList.remove('c-card__details--nostar');
+		imdbStar3.classList.add('c-card__details--star');
+		imdbStar4.classList.remove('c-card__details--nostar');
+		imdbStar4.classList.add('c-card__details--star');
+		imdbStar5.classList.remove('c-card__details--nostar');
+		imdbStar5.classList.add('c-card__details--star');
+	}
+	console.log("bbbbbbb")
+	console.log(imdbStar1);
+	console.log(imdbStar2);
+	console.log(imdbStar3);
+	console.log(imdbStar4);
+	console.log(imdbStar5);
+	console.log("ccccccccc")
 }
 
 
@@ -191,6 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	// details = document.querySelector(".js-details");
 	// moredetails = document.querySelector(".js-moredetails");
 	// timeline = document.querySelector(".js-timeline");
+
+	imdbStar1 = document.querySelector(".js-imdbstar1");
+	imdbStar2 = document.querySelector(".js-imdbstar2");
+	imdbStar3 = document.querySelector(".js-imdbstar3");
+	imdbStar4 = document.querySelector(".js-imdbstar4");
+	imdbStar5 = document.querySelector(".js-imdbstar5");
+	console.log(imdbStar1);
 
 	btnMovies.addEventListener("click", function(){
 		console.log("button movies clicked");

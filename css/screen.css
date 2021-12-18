@@ -568,7 +568,7 @@ input::placeholder {
 
 .c-card__content {
   display: grid;
-  grid-template-columns: 1fr 35rem;
+  grid-template-columns: 13rem 36rem;
   grid-template-rows: 20rem 1fr 40px;
 }
 
@@ -612,6 +612,25 @@ input::placeholder {
   grid-column-end: 3;
   padding-top: 1rem;
 }
+
+.c-card__myrating {
+  display: flex;
+}
+
+.c-card__details--icon {
+  position: relative;
+  transform: scale(1);
+  transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 2.275);
+  will-change: transform;
+  padding-right: .35rem;
+}
+
+.c-card__detailsstar:checked + .c-card__detailslabel .c-card__details--icon{
+  transform: scale(1.1);
+  fill: var(--global-color-alpha);
+
+}
+
 
 .c-card__plot {
   padding-top: 2rem;

@@ -53,6 +53,7 @@
                         <label class="c-card__year" for="year" name="year">Year: 1989</label>
                         <div class="c-card__details c-card__details--imdbrating">
                           <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
+                          
                           <svg class="c-card__details--star js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
@@ -80,33 +81,51 @@
                           </svg>
                         </div>
                         <div class="c-card__details--myrating">
+                          
                           <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
-                          <svg class="c-card__details--nostar js-mystar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                          <div class="c-card__myrating">
+                          <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar1" />
+                          <label class="c-label c-card__detailslabel" for="mystar1">
+                            <svg class="c-card__details--icon c-card__details--nostar js-mystar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                              <path d="M0 0h24v24H0z" fill="none" />
+                              <path d="M0 0h24v24H0z" fill="none" />
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                          </label>
+                          <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar2" />
+                          <label class="c-label c-card__detailslabel" for="mystar2">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                           </svg>
-                          <svg class="c-card__details--nostar js-mystar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar3" />
+                          <label class="c-label c-card__detailslabel" for="mystar3">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                           </svg>
-                          <svg class="c-card__details--nostar js-mystar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar4" />
+                          <label class="c-label c-card__detailslabel" for="mystar4">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                           </svg>
-                          <svg class="c-card__details--nostar js-mystar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar" type="checkbox" id="mystar5" />
+                          <label class="c-label c-card__detailslabel" for="mystar5">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                           </svg>
-                          <svg class="c-card__details--nostar js-mystar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                          </svg>
+                        </label>
                         </div>
+                      </div>
 
                          <label for="runtime" name="runtime" class="c-card__runtime">Runtime: 3 hours</label>
                       </div>
