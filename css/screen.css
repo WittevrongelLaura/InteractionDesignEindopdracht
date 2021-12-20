@@ -75,6 +75,13 @@ body {
   place-items: center;
 }
 
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+}
+
 /*
 * Remove text-shadow in selection highlight:
 * https://twitter.com/miketaylr/status/12228805301
@@ -491,10 +498,21 @@ input::placeholder {
 
 .c-app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  
+  margin: 0 auto;
   background-color: white;
+  width: 30rem;
+}
+
+@media (min-width: 768px) {
+  .c-app {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c-app {
+    width: 60rem;
+  }
 }
 
 /*
@@ -504,19 +522,24 @@ input::placeholder {
 */
 
 .c-button {
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .c-button__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   color: var(--global-color-background);
   border: var(--global-color-background) .1rem solid;
-  width: 7rem;
+  width: 12.5rem;
   height: 2rem;
   font-family: inherit;
 }
 
-.c-btn__toggle--activated {
+.c-button__toggle--activated {
   background-color: var(--global-color-background);
   color: var(--global-color-font-button);
   
@@ -526,23 +549,27 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 576px) {
-  /*phone*/
-}
 
 @media (min-width: 768px) {
   /*tablet portrait*/
+  .c-button__toggle {
+    width: 17.5rem;
+  }
 }
 
 @media (min-width: 992px) {
   /*tablet landscape*/
+  .c-button__toggle {
+    width: 23rem;
+  }
 }
 
 @media (min-width: 1200px) {
-  
+  .c-button__toggle {
+    width: 27rem;
+    margin-top: 2rem;
+  }
 }
-
-
 
 /*
     Component: Page
@@ -566,6 +593,15 @@ input::placeholder {
 
 .c-input__search {
   font-family: inherit;
+  
+}
+
+.c-input__search:focus {
+  border: var(--global-color-alpha) 2px solid;
+}
+
+.c-input__search:hover {
+  border: var(--global-color-alpha) 1px solid;
 }
 
 /*
@@ -583,15 +619,15 @@ input::placeholder {
 
 .c-card__content {
   display: grid;
-  grid-template-columns: 13rem 36rem;
-  grid-template-rows: 20rem 1fr 40px;
+  grid-template-columns: 9rem 12rem;
+  grid-template-rows: 5rem 1fr 45rem 3rem;
 }
-
 
 .c-card__poster {
   grid-column-start: 1;
-  grid-row-start: 1;
-  
+  grid-row-start: 2;
+  width: 11rem;
+  height: 16rem;
 }
 
 .c-card__poster--image {
@@ -602,13 +638,20 @@ input::placeholder {
 .c-card__info {
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  gap: 1.25rem;
+  padding-left: 2.5rem;
   grid-column-start: 2;
-  grid-row-start: 1;
+  grid-row-start: 2;
 }
 
 .c-card__title {
   height: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.c-card__title--title {
+  font-size: 24px;
 }
 
 .c-card__details--star {
@@ -622,7 +665,7 @@ input::placeholder {
 }
 
 .c-card__moredetails {
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-column-start: 1;
   grid-column-end: 3;
   padding-top: 1rem;
@@ -643,9 +686,7 @@ input::placeholder {
 .c-card__detailsstar:checked + .c-card__detailslabel .c-card__details--icon{
   transform: scale(1.1);
   fill: var(--global-color-alpha);
-
 }
-
 
 .c-card__plot {
   padding-top: 2rem;
@@ -654,10 +695,10 @@ input::placeholder {
 .c-card__timeline {
   grid-column-start: 1;
   grid-column-end: 3;
-  grid-row-start: 3;  
+  grid-row-start: 4;  
 }
 
-.c-card__timelinelabels {
+.c-card__timeline--labels {
   margin-top: 1rem;
   display: flex;
   align-items: stretch;
@@ -693,8 +734,57 @@ input::placeholder {
 }
 
 .c-card__timelinespan {
-  width: 25%;
+  width: 75%;
 }
+
+.c-card__timeline, .c-card__timeline--line{
+  width: 100%;
+}
+
+.c-card__timelin, .c-card__timeline--labels {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .c-card__content {
+    grid-template-columns: 16rem 15rem;
+    grid-template-rows: 5rem 1fr 30rem 3rem;
+  }
+
+  .c-card__title--title{
+    font-size: 28px;
+  }
+
+  .c-card__poster {
+    width: 15rem;
+    height: 23rem;
+  }
+  .c-card__info {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .c-card__content {
+    grid-template-columns: 25rem 25rem;
+    grid-template-rows: 5rem 1fr 25rem 3rem;
+  }
+
+  .c-card__title--title{
+    font-size: 36px;
+  }
+
+  .c-card__poster {
+    width: 20rem;
+    height: 30rem;
+  }
+  
+  .c-card__info {
+    gap: 2rem;
+  }
+}
+
 
 /* .c-card__detail {
   display: flex;

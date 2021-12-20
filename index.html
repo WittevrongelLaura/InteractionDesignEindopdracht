@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="msapplication-TileColor" content="#cce7ff" />
     <meta name="theme-color" content="#cce7ff" />
-
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+    <link rel="icon" href="icons/favicon.svg">
+    <!-- credits icon: https://www.freepik.com/free-icon/tv_793291.htm -->
     <link rel="manifest" href="site.webmanifest" />
     <!-- <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f3557"> -->
 
@@ -31,8 +29,10 @@
             </header>
             <div class="o-section">
               <div class="o-layout c-button">
-                <input class="c-button__toggle c-btn__toggle--activated js-btntogglemovies" type="button" name="moviebtn" value="Movies" />
-                <input class="c-button__toggle js-btntoggleseries" type="button" name="seriebtn" value="Series" />
+                <input class="o-hide-accessible" id="movies" type="radio" name="moviebtn" value="Movies" checked/>
+                <label class="o-button-reset c-button__toggle c-button__toggle--activated js-btntogglemovies" for="movies">Movies</label>
+                <input class="o-hide-accessible" id="series" type="radio" name="seriebtn" value="Series" />
+                <label class="o-button-reset c-button__toggle js-btntoggleseries" for="series">Series</label>
               </div>
             </div>
             <div class="c-page js-page">
@@ -47,13 +47,14 @@
                 <div class="c-cards js-cards">
                   <div class="c-card">
                     <div class="c-card__content">
-                      <div class="c-card__poster"><img class="c-card__poster--image" src="https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg" alt="Movie/Serie poster" /></div>
+                      <div class="c-card__poster"><img class="c-card__poster--image" src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="Movie/Serie poster" /></div>
+                      <label class="c-card__title"><h1 class="c-card__title--title" for="title" name="title">Fast & Furious 6</h1></label>
+                        
                       <div class="c-card__info">
-                        <label class="c-card__title"><h1 for="title" name="title">VoorbeeldTitleVoorbeeldTitle VoorbeeldTitle VoorbeeldTitleVoorbeeldTitle</h1></label>
-                        <label class="c-card__year" for="year" name="year">Year: 1989</label>
+                        <label class="c-card__year" for="year" name="year">Year: 2013</label>
                         <div class="c-card__details c-card__details--imdbrating">
                           <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
-                          
+                    
                           <svg class="c-card__details--star js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
@@ -82,18 +83,18 @@
                         </div>
                         <div class="c-card__details--myrating">
                           
-                          <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
-                          <div class="c-card__myrating">
-                          <input class="o-hide-accessible c-card__detailsstar js-mystar1" type="checkbox" id="input1" />
-                          <label class="c-label c-card__detailslabel" for="mystar1">
-                            <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-                              <path d="M0 0h24v24H0z" fill="none" />
-                              <path d="M0 0h24v24H0z" fill="none" />
-                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                          </label>
-                          <input class="o-hide-accessible c-card__detailsstar js-mystar2" type="checkbox" id="input2" />
-                          <label class="c-label c-card__detailslabel" for="mystar2">
+                        <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
+                        <div class="c-card__myrating">
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar1" type="checkbox" id="input1" />
+                        <label class="c-label c-card__detailslabel" for="mystar1">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar2" type="checkbox" id="input2" />
+                        <label class="c-label c-card__detailslabel" for="mystar2">
                           <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
                             <path d="M0 0h24v24H0z" fill="none" />
                             <path d="M0 0h24v24H0z" fill="none" />
@@ -127,17 +128,17 @@
                         </div>
                       </div>
 
-                         <label for="runtime" name="runtime" class="c-card__runtime">Runtime: 3 hours</label>
+                        <label for="runtime" name="runtime" class="c-card__runtime">Runtime: 130min</label>
                       </div>
 
                       <div class="c-card__moredetails">
-                        <label for="actors" name="actors" class="c-card__actors">Actors: Bruce Willis</label>
-                        <label for="plot" name="plot" class="c-card__plot">This is a story.</label>
+                        <label for="actors" name="actors" class="c-card__actors">Actors: Vin Diesel, Paul Walker, Dwayne Johnson, Vin Diesel, Paul Walker, Dwayne Johnson</label>
+                        <label for="plot" name="plot" class="c-card__plot">Since Dom (Diesel) and Brian's (Walker) Rio heist toppled a kingpin's empire and left their crew with $100 million, our heroes have scattered across the globe. But their inability to return home and living forever on the lam have left their lives incomplete. Meanwhile, Hobbs (Johnson) has been tracking an organization of lethally skilled mercenary drivers across 12 countries, whose mastermind (Evans) is aided by a ruthless second-in-command revealed to be the love Dom thought was dead, Letty (Rodriguez). The only way to stop the criminal outfit is to outmatch them at street level, so Hobbs asks Dom to assemble his elite team in London. Payment? Full pardons for all of them so they can return home and make their families whole again.</label>
                        
                       </div>
 
                       <div class="c-card__timeline">
-                        <div class="c-card__timelinelabels">
+                        <div class="c-card__timeline--labels">
                           <label class="c-card__timeline--0">0</label>
                           <label class="c-card__timeline--1">1</label>
                           <label class="c-card__timeline--2">2</label>

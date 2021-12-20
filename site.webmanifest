@@ -3,12 +3,12 @@
     "short_name": "OMDB",
     "icons": [
         {
-            "src": "",
-            "sizes": "",
+            "src": "favicon.svg",
+            "sizes": "180x180",
             "type": ""
         }
     ],
-    "theme_color": "#cce7ff",
-    "background_color": "#2b9be0",
+    "theme_color": "#066baa",
+    "background_color": "#066baa",
     "display": "standalone"
 }
