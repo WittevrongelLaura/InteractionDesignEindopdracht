@@ -527,7 +527,7 @@ input::placeholder {
   justify-content: center;
 }
 
-.c-button__toggle {
+.c-button__label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -537,35 +537,43 @@ input::placeholder {
   width: 12.5rem;
   height: 2rem;
   font-family: inherit;
+  position: relative;
+  transform: scale(1);
+  transition: transform .5s;
+  will-change: transform;
 }
 
-.c-button__toggle--activated {
+.c-button__label--activated {
   background-color: var(--global-color-background);
   color: var(--global-color-font-button);
   
 }
 
-.c-button__toggle:hover {
+.c-button__label:hover {
   cursor: pointer;
+}
+
+.c-button__toggle:checked + .c-button__label {
+  transform: scale(1.1);
 }
 
 
 @media (min-width: 768px) {
   /*tablet portrait*/
-  .c-button__toggle {
+  .c-button__label {
     width: 17.5rem;
   }
 }
 
 @media (min-width: 992px) {
   /*tablet landscape*/
-  .c-button__toggle {
+  .c-button__label {
     width: 23rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c-button__toggle {
+  .c-button__label {
     width: 27rem;
     margin-top: 2rem;
   }
