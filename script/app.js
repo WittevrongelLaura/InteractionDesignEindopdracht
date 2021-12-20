@@ -302,7 +302,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	const mystar5 = document.querySelector('.js-mystar5');
 
 	const resetAll = function(star){
-		if (star == 1){
+		if (star == "icon1"){
+			mystar2.checked = false;
+			mystar3.checked = false;
+			mystar4.checked = false;
+			mystar5.checked = false;
 			mystar2.classList.remove('c-card__details--star');
 			mystar2.classList.add('c-card__details--nostar');
 			mystar3.classList.remove('c-card__details--star');
@@ -311,8 +315,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			mystar4.classList.add('c-card__details--nostar');
 			mystar5.classList.remove('c-card__details--star');
 			mystar5.classList.add('c-card__details--nostar');
+			
 		}
-		if(star == 2){
+		if(star == "icon2"){
+			mystar3.checked = false;
+			mystar4.checked = false;
+			mystar5.checked = false;
 			mystar3.classList.remove('c-card__details--star');
 			mystar3.classList.add('c-card__details--nostar');
 			mystar4.classList.remove('c-card__details--star');
@@ -320,13 +328,16 @@ document.addEventListener('DOMContentLoaded', function() {
 			mystar5.classList.remove('c-card__details--star');
 			mystar5.classList.add('c-card__details--nostar');
 		}
-		if(star == 3){
+		if(star == "icon3"){
+			mystar4.checked = false;
+			mystar5.checked = false;
 			mystar4.classList.remove('c-card__details--star');
 			mystar4.classList.add('c-card__details--nostar');
 			mystar5.classList.remove('c-card__details--star');
 			mystar5.classList.add('c-card__details--nostar');
 		}
-		if(star == 4){
+		if(star == "icon4"){
+			mystar5.checked = false;
 			mystar5.classList.remove('c-card__details--star');
 			mystar5.classList.add('c-card__details--nostar');
 		}
@@ -346,30 +357,40 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log('clicked mystar');
 			let nrstar = this.getAttribute('id');
 			// let nr = nrstar.substring(nrstar.length-1, nrstar.length)
-			console.log(nrstar);
+			//console.log(nrstar);
 
-			if (nrstar == 1) {
+			if (nrstar == "icon1") {
 				resetAll(nrstar);
+				mystar1.checked = true;
 				mystar1.classList.add('c-card__details--star');
 				
 			}
 			
-			if (nrstar == 2) {
+			if (nrstar == "icon2") {
 				resetAll(nrstar);
+				mystar1.checked = true;
+				mystar2.checked = true;
 				mystar1.classList.remove('c-card__details--nostar');
 				mystar1.classList.add('c-card__details--star');
 				mystar2.classList.add('c-card__details--star');
 			}
-			if (nrstar == 3) {
+			if (nrstar == "icon3") {
 				resetAll(nrstar);
+				mystar1.checked = true;
+				mystar2.checked = true;
+				mystar3.checked = true;
 				mystar3.classList.add('c-card__details--star');
 				mystar1.classList.remove('c-card__details--nostar');
 				mystar1.classList.add('c-card__details--star');
 				mystar2.classList.remove('c-card__details--nostar');
 				mystar2.classList.add('c-card__details--star');
 			}
-			if (nrstar == 4) {
+			if (nrstar == "icon4") {
 				resetAll(nrstar);
+				mystar1.checked = true;
+				mystar2.checked = true;
+				mystar3.checked = true;
+				mystar4.checked = true;
 				mystar1.classList.remove('c-card__details--nostar');
 				mystar1.classList.add('c-card__details--star');
 				mystar2.classList.remove('c-card__details--nostar');
@@ -378,8 +399,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				mystar3.classList.add('c-card__details--star');
 				mystar4.classList.add('c-card__details--star');
 			}
-			if (nrstar == 5) {
-				mystar1.classList.remove('c-card__details--nostar');
+			if (nrstar == "icon5") {
+				mystar1.checked = true;
+				mystar2.checked = true;
+				mystar3.checked = true;
+				mystar4.checked = true;
+				mystar5.checked = true;
+				mystar5.classList.remove('c-card__details--nostar');
 				mystar1.classList.add('c-card__details--star');
 				mystar2.classList.remove('c-card__details--nostar');
 				mystar2.classList.add('c-card__details--star');
