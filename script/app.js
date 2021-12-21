@@ -47,7 +47,7 @@ const SearchForMovie = async function(searchText) {
 };
 
 const GetDetails = async function (id){
-	const jsonResultsId = `${ENDPOINT}i=${id}&plot=full&type=movie`;
+	const jsonResultsId = `${ENDPOINT}i=${id}&plot=full`;
 	console.log(jsonResultsId);
 	const request2 = await fetch(`${jsonResultsId}`);
 	const data2 = await request2.json();
@@ -87,13 +87,14 @@ const GetDetails = async function (id){
 	htmlString = `<div class="c-card">
 	<div class="c-card__content">
 	  <div class="c-card__poster"><img class="c-card__poster--image" src="${data2.Poster}" alt="Movie/Serie poster" /></div>
+	  <label class="c-card__title"><h1 class="c-card__title--title" for="title" name="title">${data2.Title}</h1></label>
+		
 	  <div class="c-card__info">
-		<label class="c-card__title"><h1 for="title" name="title">${data2.Title}</h1></label>
 		<label class="c-card__year" for="year" name="year">Year: ${data2.Year}</label>
 		<div class="c-card__details c-card__details--imdbrating">
 		  <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
-		  
-		  <svg class="c-card__details--nostar js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+	
+		  <svg class="c-card__details--star js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -121,43 +122,43 @@ const GetDetails = async function (id){
 		</div>
 		<div class="c-card__details--myrating">
 		  
-		  <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
-		  <div class="c-card__myrating">
-		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar1" />
-		  <label class="c-label c-card__detailslabel " for="mystar1">
-			<svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-			  <path d="M0 0h24v24H0z" fill="none" />
-			  <path d="M0 0h24v24H0z" fill="none" />
-			  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-			</svg>
-		  </label>
-		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar2" />
-		  <label class="c-label c-card__detailslabel " for="mystar2">
-		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		<label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
+		<div class="c-card__myrating">
+		<input class="o-hide-accessible c-card__detailsstar js-mystar1" type="checkbox" id="input1" />
+		<label class="c-label c-card__detailslabel" for="mystar1">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		<input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar3" />
-		  <label class="c-label c-card__detailslabel " for="mystar3">
-		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		<input class="o-hide-accessible c-card__detailsstar js-mystar2" type="checkbox" id="input2" />
+		<label class="c-label c-card__detailslabel" for="mystar2">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar4" />
-		  <label class="c-label c-card__detailslabel " for="mystar4">
-		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		<input class="o-hide-accessible c-card__detailsstar js-mystar3" type="checkbox" id="input3" />
+		  <label class="c-label c-card__detailslabel" for="mystar3">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 		  </svg>
 		</label>
-		  <input class="o-hide-accessible c-card__detailsstar js-mystar" type="checkbox" id="mystar5" />
-		  <label class="c-label c-card__detailslabel " for="mystar5">
-		  <svg class="c-card__details--icon c-card__details--nostar " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar4" type="checkbox" id="input4" />
+		  <label class="c-label c-card__detailslabel" for="mystar4">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+			<path d="M0 0h24v24H0z" fill="none" />
+			<path d="M0 0h24v24H0z" fill="none" />
+			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+		  </svg>
+		</label>
+		  <input class="o-hide-accessible c-card__detailsstar js-mystar5" type="checkbox" id="input5" />
+		  <label class="c-label c-card__detailslabel" for="mystar5">
+		  <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M0 0h24v24H0z" fill="none" />
 			<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -166,7 +167,7 @@ const GetDetails = async function (id){
 		</div>
 	  </div>
 
-		 <label for="runtime" name="runtime" class="c-card__runtime">Runtime: ${data2.Runtime}</label>
+		<label for="runtime" name="runtime" class="c-card__runtime">Runtime: ${data2.Runtime}</label>
 	  </div>
 
 	  <div class="c-card__moredetails">
@@ -176,7 +177,7 @@ const GetDetails = async function (id){
 	  </div>
 
 	  <div class="c-card__timeline">
-		<div class="c-card__timelinelabels">
+		<div class="c-card__timeline--labels">
 		  <label class="c-card__timeline--0">0</label>
 		  <label class="c-card__timeline--1">1</label>
 		  <label class="c-card__timeline--2">2</label>
@@ -250,6 +251,8 @@ const GetDetails = async function (id){
 document.addEventListener('DOMContentLoaded', function() {
 	btnMovies = document.querySelector(".js-btntogglemovies");
 	btnSeries = document.querySelector(".js-btntoggleseries");
+	divMovies = document.querySelector(".js-divmovies");
+	divSeries = document.querySelector(".js-divseries");
 	Page = document.querySelector(".js-page");
 
 	searchinput = document.querySelector(".js-searchinput");
@@ -276,11 +279,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	btnMovies.addEventListener("click", function(){
 		console.log("button movies clicked");
+		divMovies.classList.remove("u-z-index-back")
+		divMovies.classList.add("u-z-index-front");
+		divSeries.classList.add("u-z-index-back");
+		btnMovies.classList.add("c-button__label--activated");
+		btnSeries.classList.remove("c-button__label--activated");
 		ShowLatestMovies();
 	})
 
 	btnSeries.addEventListener("click", function(){
 		console.log("button series clicked");
+		divSeries.classList.add("u-z-index-front");
+		divMovies.classList.add("u-z-index-back");
+		btnMovies.classList.remove("c-button__label--activated");
+		btnSeries.classList.add("c-button__label--activated");
 	})
 
 	searchinput.addEventListener("keyup", function(e){

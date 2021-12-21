@@ -29,11 +29,17 @@
             </header>
             <div class="o-section">
               <div class="o-layout c-button">
-                <input class="o-hide-accessible c-button__toggle" id="movies" type="radio" name="togglebutton" value="Movies" checked/>
-                <label class="o-button-reset c-button__label  c-button__label--activated js-btntogglemovies" for="movies">Movies</label>
-                <input class="o-hide-accessible c-button__toggle" id="series" type="radio" name="togglebutton" value="Series" />
-                <label class="o-button-reset c-button__label js-btntoggleseries" for="series">Series</label>
-              </div>
+                <div class="c-button__movies js-divmovies">
+                  <input class="o-hide-accessible c-button__toggle" id="movies" type="radio" name="togglebutton" value="Movies" checked/>
+                  <label class="o-button-reset c-button__label  c-button__label--activated js-btntogglemovies" for="movies">Movies</label>
+                
+                </div>
+                <div class="c-button__series js-divseries">
+                  <input class="o-hide-accessible c-button__toggle" id="series" type="radio" name="togglebutton" value="Series" />
+                  <label class="o-button-reset c-button__label c-button__label--notactivated js-btntoggleseries" for="series">Series</label>
+              
+                </div>
+                </div>
             </div>
             <div class="c-page js-page">
               <div class="o-section">
