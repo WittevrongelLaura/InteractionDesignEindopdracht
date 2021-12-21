@@ -59,7 +59,7 @@ const SearchForResults = async function(searchText, type) {
 		// console.log(html);
 		// console.log("htmlstring done");
 
-		//let string = ``;
+		let string = ``;
 		
 		//imdb rating
 		let rating = Math.round(data2.imdbRating /2);
@@ -76,7 +76,7 @@ const SearchForResults = async function(searchText, type) {
 		}
 		console.log(percentage);
 
-		html += `<div class="c-card">
+		string += `<div class="c-card">
 		<div class="c-card__content">
 		<div class="c-card__poster"><img class="c-card__poster--image" src="${data2.Poster}" alt="Movie/Serie poster" /></div>
 		<label class="c-card__title"><h1 class="c-card__title--title" for="title" name="title">${data2.Title}</h1></label>
@@ -184,7 +184,7 @@ const SearchForResults = async function(searchText, type) {
 		</div>
   		</div>`;
 
-		cards.innerHTML += html;
+		cards.innerHTML += string;
 
 		ListenToclickMyStar();
 
