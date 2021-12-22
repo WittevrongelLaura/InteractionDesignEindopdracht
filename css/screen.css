@@ -638,7 +638,7 @@ input::placeholder {
 .c-card__content {
   display: grid;
   grid-template-columns: 9rem 12rem;
-  grid-template-rows: 5rem 1fr 45rem 3rem;
+  grid-template-rows: 6rem 1fr 47rem 3rem;
 }
 
 .c-card__poster {
