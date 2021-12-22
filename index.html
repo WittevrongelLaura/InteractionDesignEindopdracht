@@ -44,12 +44,19 @@
             <div class="c-page js-page">
               <div class="o-section">
                 <div class="o-layout c-input">
-                  <label class="c-input__search--label" for="search">Search for any movie.</label>
+                  <label class="c-input__search--label" for="search">Search for any movie.<span class="u-hide js-inputmessage c-input__search--span">Specify your searchterm.</span></label>
                   <input class="js-searchinput c-input__search" type="text" name="searchinput" id="searchinput" placeholder="e.g. No Time To Die" />
                   <!-- <button class="js-btnsearch" type="submit">Search</button> -->
                 </div>
               </div>
               <div class="o-section">
+              <div class="c-loader js-loader u-hide">
+                <div class="c-loader__circle"></div>
+                <div class="c-loader__message js-loadermessage">Loading random movies ...</div>
+              </div>
+              <div class="c-message js-resultsmessage u-hide">
+                <label class="c-message--message">No results found.</label>
+              </div>
                 <div class="c-cards js-cards">
                   <div class="c-card">
                     <div class="c-card__content">

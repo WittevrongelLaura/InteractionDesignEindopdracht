@@ -614,12 +614,67 @@ input::placeholder {
   
 }
 
+.c-input__search--span {
+  color: red;
+  margin-right: 0;
+  margin-left: 4.25rem;
+}
+
 .c-input__search:focus {
   border: var(--global-color-alpha) 2px solid;
 }
 
 .c-input__search:hover {
   border: var(--global-color-alpha) 1px solid;
+}
+
+/*
+    Component: Loader
+    ---
+    Shows until json is loaded
+*/
+.c-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.c-loader__circle {
+  margin: 0 auto; /*centreren*/
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--global-color-alpha);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.c-loader__message {
+  margin-top: 2rem;
+}
+
+/*
+    Component: Message
+    ---
+    Message shown when there are no results
+*/
+.c-message {
+  display: flex;
+  justify-content: center;
 }
 
 /*
