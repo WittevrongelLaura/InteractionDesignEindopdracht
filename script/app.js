@@ -1,4 +1,10 @@
 const APIKEY = "db006036";
+//api-key1 = db006036 --> unauthorized: request limit reached (enkel bij ShowRandom), 
+//bij SearchForResults werkt het.
+//ShowRandom uit commentaar halen op lijn 852 856 867 877
+//api-key2 = 89fbfa5b --> wrong API key, werkt wel met link in browser...
+
+
 const ENDPOINT = `http://www.omdbapi.com/?apikey=${APIKEY}&`;
 let searchinput = "";
 let imdbStar1, imdbStar2, imdbStar3, imdbStar4, imdbStar5;
@@ -109,6 +115,7 @@ const SearchForResults = async function(searchText, type) {
 		
 		//Search for movie
 		const jsonResultsSearch = `${ENDPOINT}s=${searchText}&type=${type}`;
+		console.log(jsonResultsSearch);
 		const request = await fetch(`${jsonResultsSearch}`);
 		const data = await request.json();
 		console.log(data);
@@ -155,6 +162,9 @@ const SearchForResults = async function(searchText, type) {
 				percentage = 100;
 			}
 			console.log(percentage);
+
+			//adjust whitespace to plot
+			//console.log(data2.Plot.length);
 
 			string += `<div class="c-card">
 			<div class="c-card__content">
@@ -854,7 +864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		divSeries.classList.add("u-z-index-back");
 		btnMovies.classList.add("c-button__label--activated");
 		btnSeries.classList.remove("c-button__label--activated");
-		ShowRandom("movie");
+		//ShowRandom("movie");
 		searchinput.value = ""; //clear searchinput
 	})
 
@@ -864,7 +874,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		divMovies.classList.add("u-z-index-back");
 		btnMovies.classList.remove("c-button__label--activated");
 		btnSeries.classList.add("c-button__label--activated");
-		ShowRandom("series");
+		//ShowRandom("series");
 		searchinput.value = "";
 	})
 
