@@ -622,9 +622,9 @@ input::placeholder {
   margin-left: 4.25rem;
 }
 
-.c-input__search--label + .c-input__search:active {
+.c-input__search--label + .c-input__search:hover {
   border: 0;
-  border-color: var(--global-color-alpha);
+  border: var(--global-color-alpha) 1px solid;
 }
 
 .c-input__search--label + .c-input__search:focus {
@@ -632,9 +632,9 @@ input::placeholder {
   border: var(--global-color-alpha) 2px solid;
 }
 
-.c-input__search--label + .c-input__search:hover {
+.c-input__search--label + .c-input__search:active {
   border: 0;
-  border: var(--global-color-alpha) 1px solid;
+  border-color: var(--global-color-alpha);
 }
 
 /*

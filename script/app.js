@@ -849,11 +849,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	if (radioMovies.checked){
 		cards.innerHTML = ``;
 		//loadermessage.innerHTML = `Loading random movies...`;
-		//ShowRandom("movie");
+		ShowRandom("movie");
 	} else {
 		cards.innerHTML = ``;
 		//loadermessage.innerHTML = `Loading random series...`;
-		//ShowRandom("series");
+		ShowRandom("series");
 	}
 	
 
@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		divSeries.classList.add("u-z-index-back");
 		btnMovies.classList.add("c-button__label--activated");
 		btnSeries.classList.remove("c-button__label--activated");
-		//ShowRandom("movie");
+		ShowRandom("movie");
 		searchinput.value = ""; //clear searchinput
 	})
 
@@ -874,7 +874,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		divMovies.classList.add("u-z-index-back");
 		btnMovies.classList.remove("c-button__label--activated");
 		btnSeries.classList.add("c-button__label--activated");
-		//ShowRandom("series");
+		ShowRandom("series");
 		searchinput.value = "";
 	})
 
