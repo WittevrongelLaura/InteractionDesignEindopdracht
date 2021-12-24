@@ -5,7 +5,7 @@ const APIKEY = "db006036";
 //api-key2 = 89fbfa5b --> wrong API key, werkt wel met link in browser...
 
 
-const ENDPOINT = `http://www.omdbapi.com/?apikey=${APIKEY}&`;
+const ENDPOINT = `https://www.omdbapi.com/?apikey=${APIKEY}&`;
 let searchinput = "";
 let imdbStar1, imdbStar2, imdbStar3, imdbStar4, imdbStar5;
 let mystars;
